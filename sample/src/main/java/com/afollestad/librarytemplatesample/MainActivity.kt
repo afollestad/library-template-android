@@ -23,20 +23,19 @@ import androidx.appcompat.app.AppCompatActivity
 import com.afollestad.librarytemplate.Greeter
 
 class MainActivity : AppCompatActivity() {
-  lateinit var inputView: TextView
+  private val inputView by lazy { findViewById<TextView>(R.id.inputView) }
+  private val buttonView by lazy { findViewById<Button>(R.id.buttonView) }
   private var greeter: Greeter? = null
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
     setContentView(R.layout.activity_main)
-
-    inputView = findViewById(R.id.inputView)
     greeter = Greeter(this)
 
-    findViewById<Button>(R.id.buttonView).onClickDebounced {
+    buttonView.onClickDebounced {
       AlertDialog.Builder(this)
-          .setMessage(greeter?.greet(inputView.text.toString()))
-          .show()
+        .setMessage(greeter?.greet(inputView.text.toString()))
+        .show()
     }
   }
 
