@@ -1,4 +1,3 @@
-ext.module_group = "com.afollestad"
 ext.module_name = "librarytemplatesample"
 
 apply from: rootProject.file("gradle/android_application_config.gradle")
