@@ -25,7 +25,10 @@ GitHub.
 
 But there are some pre-requisites:
 
-1. Update [gradle/android_bintray_config.gradle](gradle/android_bintray_config.gradle#L37-L47) to contain your library's information (name, description, etc.).
-2. From your repository settings, add `secrets` for `BINTRAY_ORG`, `BINTRAY_USER`, and `BINTRAY_API_KEY`. These will be used by the Bintray Release action workflow.
-3. With each release, update the version name and code in [dependencies.gradle](dependencies.gradle#L5-L6).
-4. Once you've deployed to Bintray for the first time, you can link your Bintray repository to jCenter so people can depend on your library from Android projects _without_ having to add any special repositories.
+1. Update [library_info.gradle](library_info.gradle) to contain your library's information (group, description, etc.).
+2. From your GitHub repository settings, add **secrets** for `BINTRAY_ORG`, `BINTRAY_USER`, and `BINTRAY_API_KEY`. 
+These will be used by the `Bintray Release` GitHub Actions workflow. You can set them as environment variables
+to publish locally with `./gradlew bintrayUpload`, too.
+3. With each release, update the version name and code in [library_info.gradle](library_info.gradle#L6-L8).
+4. Once you've deployed to Bintray for the first time, you can link your Bintray repository to jCenter so 
+people can depend on your library from Android projects _without_ having to add any special repositories.

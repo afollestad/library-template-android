@@ -1,9 +1,5 @@
 ext.versions = [
-    min_sdk: 19,
-    compile_sdk: 29,
     build_tools: "29.0.0",
-    publish_version: "0.1.0",
-    publish_version_code: 1
 ]
 
 ext.deps = [
@@ -42,7 +38,7 @@ ext.deps = [
     ],
 
     debug: [
-      timber: "com.jakewharton.timber:timber:4.7.1"
+        timber: "com.jakewharton.timber:timber:4.7.1"
     ],
 
     test: [
